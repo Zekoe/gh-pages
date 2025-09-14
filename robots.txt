@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://zekoe.github.io/gh-pages/sitemap.xml

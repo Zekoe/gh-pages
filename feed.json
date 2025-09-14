@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Zekő Sebesy",
+    "description": "",
+    "home_page_url": "https://zekoe.github.io/gh-pages",
+    "feed_url": "https://zekoe.github.io/gh-pages/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Zekő Sebesy"
+    },
+    "items": [
+    ]
+}
