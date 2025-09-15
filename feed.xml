@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
-    <title>Site_Name</title>
+    <title>Zekő Sebesy</title>
     <link href="https://zekoe.github.io/gh-pages/feed.xml" rel="self" />
     <link href="https://zekoe.github.io/gh-pages" />
     <updated>2025-09-15T13:47:00+02:00</updated>
@@ -14,8 +14,8 @@
         <author>
             <name>Name_Authorname</name>
         </author>
-        <link href="https://zekoe.github.io/gh-pages/dive-into-the-danube-riverbed.html"/>
-        <id>https://zekoe.github.io/gh-pages/dive-into-the-danube-riverbed.html</id>
+        <link href="https://zekoe.github.io/gh-pages/dive-into-the-danube-riverbed/"/>
+        <id>https://zekoe.github.io/gh-pages/dive-into-the-danube-riverbed/</id>
         <media:content url="https://zekoe.github.io/gh-pages/media/posts/3/SCS07872-2.JPG" medium="image" />
 
         <updated>2025-09-15T13:34:50+02:00</updated>
