@@ -1,0 +1,51 @@
+name: Deploy Pages (Eleventy / static)
+
+on:
+  push:
+    tags:
+      - '*'          # GitLab: rules -> if: '$CI_COMMIT_TAG'
+  workflow_dispatch:  # GitLab: rules -> if: '$CI_PIPELINE_SOURCE == "trigger"'
+
+permissions:
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # --- VÁLTOZAT A) Ha a /public már készen van (pont mint a GitLab CI-ben) ---
+      # Ha NINCS build, és a repo már tartalmazza a "public" könyvtárat, akkor
+      # ezt a lépést hagyd így, és töröld a B) blokkot.
+
+      # --- VÁLTOZAT B) Ha építeni kell (Eleventy példa) ---
+      # Kommenteld ki az alábbi három sort, ha 11ty-vel építesz:
+      # - name: Build site
+      #   run: |
+      #     npm ci
+      #     npx @11ty/eleventy
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
